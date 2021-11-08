@@ -3,9 +3,10 @@ package com.blog.data.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-
 import javax.persistence.*;
+
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 @Data
 @Entity
@@ -19,4 +20,8 @@ public class Comment {
     private String comment;
     @NonNull
     private LocalTime time;
+    @ManyToOne
+    private Category category;
+    @ManyToOne
+    private Post posts;
 }

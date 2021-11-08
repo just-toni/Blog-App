@@ -6,6 +6,7 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 @Data
 @Entity
@@ -22,4 +23,9 @@ public class Post {
     @NonNull
     private LocalDate dateOfPost;
     private String imageUrl;
+    @JoinColumn(name = "commentId")
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Comment comments;
+
+
 }
