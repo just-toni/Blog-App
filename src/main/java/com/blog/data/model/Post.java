@@ -3,14 +3,17 @@ package com.blog.data.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class Post {
 
     @Id
@@ -22,10 +25,11 @@ public class Post {
     private String body;
     @NonNull
     private LocalDate dateOfPost;
+    @NonNull
     private String imageUrl;
-    @JoinColumn(name = "commentId")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Comment comments;
-
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Comment> comments;
+    @ManyToOne
+    private Category category;
 
 }
