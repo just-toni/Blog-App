@@ -16,12 +16,13 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
     private Long categoryId;
     @NonNull
     private String name;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL)
     private List<Comment> comments;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "categories", cascade = CascadeType.ALL)
     private List<Post> posts;
 
 }

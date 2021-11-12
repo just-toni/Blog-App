@@ -18,13 +18,16 @@ public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comment_id")
     private Long commentId;
     @NonNull
     private String comment;
     @NonNull
     private LocalTime time;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id")
     private Category categories;
-    @ManyToOne
-    private Post posts;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "post_id")
+    private Post post;
 }
