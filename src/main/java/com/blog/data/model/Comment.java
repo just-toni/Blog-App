@@ -24,7 +24,7 @@ public class Comment {
     @NonNull
     private LocalTime time;
     @ManyToOne
-    private Category category;
+    private Category categories;
     @ManyToOne
     private Post posts;
 }

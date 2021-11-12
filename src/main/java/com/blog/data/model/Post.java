@@ -30,6 +30,6 @@ public class Post {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Comment> comments;
     @ManyToOne
-    private Category category;
+    private Category categories;
 
 }

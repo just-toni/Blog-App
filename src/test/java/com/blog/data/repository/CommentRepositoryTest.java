@@ -19,7 +19,7 @@ class CommentRepositoryTest {
     CommentRepository commentRepository;
 
     @Test
-    void createComment(){
+    void createCategory(){
         Comment comment = new Comment("This looks delicious", LocalTime.now());
         Comment comment1 = new Comment("Dripping hot noodles", LocalTime.now());
         commentRepository.save(comment);
@@ -28,7 +28,7 @@ class CommentRepositoryTest {
     }
 
     @Test
-    void updatePostById(){
+    void updateCategoryById(){
         Optional<Comment> optionalComment = commentRepository.findById(1L);
         if(optionalComment.isPresent()){
             Comment comment = optionalComment.get();
@@ -39,7 +39,7 @@ class CommentRepositoryTest {
     }
 
     @Test
-    void deletePostById(){
+    void deleteCategoryById(){
         Optional<Comment> optionalComment = commentRepository.findById(2L);
         if(optionalComment.isPresent()){
             Comment comment = optionalComment.get();
