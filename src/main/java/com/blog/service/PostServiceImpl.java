@@ -37,4 +37,14 @@ public class PostServiceImpl implements PostService{
     public List<Post> findAll() {
         return postRepository.findAll();
     }
+
+    @Override
+    public Post addComment(CommentDto commentDto) {
+        return null;
+    }
+
+    @Override
+    public Post addCategory(CategoryDto categoryDto) {
+        return null;
+    }
 }

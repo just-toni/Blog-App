@@ -13,6 +13,7 @@ public interface PostService {
     Optional<Post> findByPostId(Long postId);
     void deletePostById(Long postId);
     List<Post> findAll();
-
+    Post addComment(CommentDto commentDto);
+    Post addCategory(CategoryDto categoryDto);
 
 }
