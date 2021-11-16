@@ -14,7 +14,7 @@ public interface CategoryService {
     Optional<Category> findByCategoryId(Long categoryId);
     void deleteCategoryById(Long categoryId);
     List<Category> findAll();
-    Category addPost(PostDto postDto);
-    Category addComment(CommentDto commentDto);
+    Category addPost(PostDto postDto, Long categoryId);
+    Category addComment(CommentDto commentDto, Long categoryId);
 
 }
