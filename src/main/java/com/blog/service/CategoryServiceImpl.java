@@ -45,6 +45,6 @@ public class CategoryServiceImpl implements CategoryService{
 //        Post updatedPost = post.get ();
 //        updatedPost.getComments ().add ( comment );
 //        postRepository.save ( updatedPost);
-
+        return null;
     }
 }
