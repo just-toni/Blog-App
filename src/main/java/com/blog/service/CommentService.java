@@ -1,5 +1,6 @@
 package com.blog.service;
 
+import com.blog.data.model.Category;
 import com.blog.data.model.Comment;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,6 @@ public interface CommentService {
     Optional<Comment> findByCommentId(Long commentId);
     void deleteCommentById(Long commentId);
     List<Comment> findAll();
-
+    List<Category> findAllCategoryById(Long commentId);
 
 }

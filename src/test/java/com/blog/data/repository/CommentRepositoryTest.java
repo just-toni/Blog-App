@@ -19,16 +19,16 @@ class CommentRepositoryTest {
     CommentRepository commentRepository;
 
     @Test
-    void createCategory(){
-        Comment comment = new Comment("This looks delicious", LocalTime.now());
-        Comment comment1 = new Comment("Dripping hot noodles", LocalTime.now());
+    void createComment(){
+        Comment comment = new Comment("This looks delicious", LocalTime.now(), "Tasha");
+        Comment comment1 = new Comment("Dripping hot noodles", LocalTime.now(), "Jacob");
         commentRepository.save(comment);
         commentRepository.save(comment1);
         assertNotNull(comment);
     }
 
     @Test
-    void updateCategoryById(){
+    void updateCommentById(){
         Optional<Comment> optionalComment = commentRepository.findById(1L);
         if(optionalComment.isPresent()){
             Comment comment = optionalComment.get();
@@ -39,7 +39,7 @@ class CommentRepositoryTest {
     }
 
     @Test
-    void deleteCategoryById(){
+    void deleteCommentById(){
         Optional<Comment> optionalComment = commentRepository.findById(2L);
         if(optionalComment.isPresent()){
             Comment comment = optionalComment.get();

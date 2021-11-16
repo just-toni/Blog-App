@@ -1,5 +1,6 @@
 package com.blog.service;
 
+import com.blog.data.model.Category;
 import com.blog.data.model.Comment;
 import com.blog.data.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,10 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<Comment> findAll() {
         return commentRepository.findAll();
+    }
+
+    @Override
+    public List<Category> findAllCategoryById(Long commentId) {
+        return null;
     }
 }
