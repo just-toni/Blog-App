@@ -47,4 +47,9 @@ public class CategoryServiceImpl implements CategoryService{
 //        postRepository.save ( updatedPost);
         return null;
     }
+
+    @Override
+    public Category addComment(CommentDto commentDto) {
+        return null;
+    }
 }
