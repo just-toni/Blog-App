@@ -9,9 +9,9 @@ import java.util.Optional;
 @Service
 public interface PostService {
 
-    Post addPost(Post post);
+    Post addPost(PostDto postDto);
     Optional<Post> findByPostId(Long postId);
-    void deletePostById(Long commentId);
+    void deletePostById(Long postId);
     List<Post> findAll();
 
 
