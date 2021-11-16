@@ -1,9 +1,12 @@
 package com.blog.service;
 
+import com.blog.data.model.Category;
+import com.blog.data.model.Comment;
 import com.blog.data.model.Post;
 import com.blog.data.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,12 +42,14 @@ public class PostServiceImpl implements PostService{
     }
 
     @Override
-    public Post addComment(CommentDto commentDto) {
-        return null;
+    public Post addComment(CommentDto commentDto, Long postId) {
+        findByPostId(postId);
+        Comment comment =  new Comment();
+        comment.setComment(commentDto.getComment());
+        comment.setCommenter(commentDto.getCommenter());
+        comment.setTime(LocalTime.from(commentDto.getTime()));
+        post1.getComments().add(comment);
+        return postRepository.save(post1);
     }
 
-    @Override
-    public Post addCategory(CategoryDto categoryDto) {
-        return null;
-    }
 }
