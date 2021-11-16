@@ -24,6 +24,8 @@ public class Comment {
     private String comment;
     @NonNull
     private LocalTime time;
+    @NonNull
+    private String commenter;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     private Category categories;

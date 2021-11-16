@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public interface CommentService {
 
-    Comment addComment(Comment comment);
+    Comment addComment(CommentDto commentDto);
     Optional<Comment> findByCommentId(Long commentId);
     void deleteCommentById(Long commentId);
     List<Comment> findAll();
