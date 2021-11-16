@@ -8,11 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CommentServiceImpl implements CommentService {
 
     @Autowired
     CommentRepository commentRepository;
+
+    @Autowired
+    CategoryService categoryService;
 
     Comment comment = new Comment();
 
@@ -40,7 +44,11 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Category> findAllCategoryById(Long commentId) {
-        return null;
+    public List<Category> findAllCategoriesById(Long commentId) {
+        return categoryService.findAll().stream().filter(category -> {
+            for(Comment comment : category.getComments()){
+                return comment.getCategories().equals(commentId);
+            }return false;
+        }).collect(Collectors.toList());
     }
 }

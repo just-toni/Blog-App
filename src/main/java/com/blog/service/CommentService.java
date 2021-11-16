@@ -14,6 +14,6 @@ public interface CommentService {
     Optional<Comment> findByCommentId(Long commentId);
     void deleteCommentById(Long commentId);
     List<Comment> findAll();
-    List<Category> findAllCategoryById(Long commentId);
+    List<Category> findAllCategoriesById(Long commentId);
 
 }
