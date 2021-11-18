@@ -1,13 +1,15 @@
 package com.blog.service;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
-import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Data
 public class CommentDto {
 
-    private LocalDate time;
+    @JsonFormat(pattern = "HH:mm:ss")
+    private LocalTime time;
     private String comment;
     private String commenter;
 
