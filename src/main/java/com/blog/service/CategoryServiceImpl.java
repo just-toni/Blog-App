@@ -5,11 +5,13 @@ import com.blog.data.model.Comment;
 import com.blog.data.model.Post;
 import com.blog.data.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CategoryServiceImpl implements CategoryService{
 
     @Autowired

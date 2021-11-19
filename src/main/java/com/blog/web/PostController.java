@@ -3,6 +3,7 @@ package com.blog.web;
 import com.blog.data.model.Comment;
 import com.blog.data.model.Post;
 import com.blog.service.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +11,8 @@ import java.util.Optional;
 
 @RestController
 public class PostController {
-
-    private final PostService postService = new PostServiceImpl();
+@Autowired
+    PostService postService;
 
     @PostMapping("/post/add")
     public Post addPost(@RequestBody PostDto postDto){

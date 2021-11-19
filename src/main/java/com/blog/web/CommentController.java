@@ -5,6 +5,7 @@ import com.blog.data.model.Comment;
 import com.blog.service.CommentDto;
 import com.blog.service.CommentService;
 import com.blog.service.CommentServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +14,8 @@ import java.util.Optional;
 @RestController
 public class CommentController {
 
-    private final CommentService commentService = new CommentServiceImpl();
+    @Autowired
+    CommentService commentService;
 
     @PostMapping("/comment/add")
     public Comment addComment(@RequestBody CommentDto commentDto){

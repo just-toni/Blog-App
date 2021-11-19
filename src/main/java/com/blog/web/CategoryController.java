@@ -4,6 +4,7 @@ import com.blog.data.model.Category;
 import com.blog.service.CategoryDto;
 import com.blog.service.CategoryService;
 import com.blog.service.CategoryServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.Optional;
 @RestController
 public class CategoryController {
 
-    private final CategoryService categoryService = new CategoryServiceImpl();
+    @Autowired
+    CategoryService categoryService;
 
     @PostMapping("/category/add")
     public Category addCategory(@RequestBody CategoryDto categoryDto){

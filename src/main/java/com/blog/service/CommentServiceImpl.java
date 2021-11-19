@@ -4,12 +4,14 @@ import com.blog.data.model.Category;
 import com.blog.data.model.Comment;
 import com.blog.data.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class CommentServiceImpl implements CommentService {
 
     @Autowired
